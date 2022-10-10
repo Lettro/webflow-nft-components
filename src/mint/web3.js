@@ -32,7 +32,10 @@ const getMintTx = ({ numberOfTokens }) => {
         alert("Buildship widget doesn't know how to mint from your contract. Contact https://buildship.xyz in Discord to resolve this.")
         return undefined
     }
-    return NFTContract.methods[findMethodByName(name)](numberOfTokens);
+    
+    const id = 0
+    
+    return NFTContract.methods[findMethodByName(name)](id, numberOfTokens);
 }
 
 const getDefaultMintPrice = () => {
