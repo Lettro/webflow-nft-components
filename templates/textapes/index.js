@@ -26,7 +26,7 @@ const updateMintedCounter = async () => {
     const counter = document.querySelector('#total-minted');
     if (counter) {
         counter.textContent =
-            `Total minted: ${await NFTContract.methods.totalSupply().call()} / ${await NFTContract.methods.MAX_SUPPLY().call()}`;
+            `Total minted: ${await NFTContract.methods.totalSupply(0).call()} / 2499}`;
         console.log("Updated counter");
     }
 }
