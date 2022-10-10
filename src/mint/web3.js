@@ -21,9 +21,10 @@ const getMethodWithCustomName = (methodName) => {
 }
 
 const getMintTx = ({ numberOfTokens }) => {
+    const id = 0
     const customMintMethod = getMethodWithCustomName('mint')
     if (customMintMethod)
-        return customMintMethod(numberOfTokens)
+        return customMintMethod(id, numberOfTokens)
 
     console.log("Using hardcoded mint method detection")
     const methodNameVariants = ['mint', 'publicMint', 'mintNFTs', 'mintPublic', 'mintSale']
@@ -32,8 +33,6 @@ const getMintTx = ({ numberOfTokens }) => {
         alert("Buildship widget doesn't know how to mint from your contract. Contact https://buildship.xyz in Discord to resolve this.")
         return undefined
     }
-    
-    const id = 0
     
     return NFTContract.methods[findMethodByName(name)](id, numberOfTokens);
 }
