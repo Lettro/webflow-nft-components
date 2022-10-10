@@ -86,12 +86,8 @@ export const getMintedNumber = async () => {
     if (!NFTContract)
         return undefined
 
-    const customTotalSupplyMethod = getMethodWithCustomName('totalSupply')
-    if (customTotalSupplyMethod)
-        return await customTotalSupplyMethod().call()
-
     if (NFTContract.methods.totalSupply)
-        return await NFTContract.methods.totalSupply().call()
+        return await NFTContract.methods.totalSupply(0).call()
     // temporary solution, works only for buildship.xyz contracts
     // totalSupply was removed to save gas when minting
     // but number minted still accessible in the contract as a private variable
