@@ -108,7 +108,7 @@ export const getMaxSupply = async () => {
         return undefined
 
     if (NFTContract.methods.totalSupply) {
-        const totalSupply = await NFTContract.methods.totalSupply(1).call()
+        const totalSupply = await NFTContract.methods.totalSupply(0).call()
         const MAX_NFTS = 2499
         return MAX_NFTS - totalSupply
     }
