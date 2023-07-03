@@ -113,7 +113,7 @@ export const QuantityModalStep = ({ setQuantity, setIsLoading, setTxHash, setSte
             }}>
             <span>{mintedNumber ?? "-"}</span>
             <span style={{ margin: "0 2px"}}>/</span>
-            <span>{totalNumber ?? "-"}</span>
+            <span>10.000</span>
         </Box>}
         <Attribution sx={{ mt: 3, justifyContent: "center" }} />
     </div>
